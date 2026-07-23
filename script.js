@@ -57,22 +57,17 @@ scramble.forEach((element) => {
 // NAV BAR
 
 const nav = document.querySelector("nav");
-let stickyPoint = 0;
+const sentinel = document.querySelector("#nav-sentinel");
 
-function updateStickyPoint() {
-    stickyPoint = nav.offsetTop;
-}
-
-window.addEventListener("load", updateStickyPoint);
-window.addEventListener("resize", updateStickyPoint);
-
-window.addEventListener("scroll", () => {
-    if (window.scrollY >= stickyPoint) {
+const navObserver = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) {
         nav.classList.add("sticky");
     } else {
         nav.classList.remove("sticky");
     }
 });
+
+navObserver.observe(sentinel);
 
 
 // CARD STACK
