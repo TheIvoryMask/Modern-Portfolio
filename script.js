@@ -44,9 +44,14 @@ const observer = new IntersectionObserver((entries) => {
 
 
 const scramble = document.querySelectorAll('.scramble');
+const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
 scramble.forEach((element) => {
-    observer.observe(element);
+    if (isMobile) {
+        element.innerText = element.dataset.value; // show final text, no animation
+    } else {
+        observer.observe(element);
+    }
 });
 
 // NAV BAR

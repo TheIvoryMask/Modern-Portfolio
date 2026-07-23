@@ -330,6 +330,10 @@ nav {
         height: 40vh;
         align-items: center;
         justify-content: center;
+
+        h2 {
+            font-size: 2rem;
+        }
         .toolbox {
             display: flex;
             flex-direction: row;
@@ -356,13 +360,16 @@ nav {
 
     // CURRENTLY LEARNING
     #currently-learning {
-           display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 4rem;
-    margin-top: 4rem;
-    height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 4rem;
+            margin-top: 4rem;
+            height: 100vh;
+            h2 {
+                font-size: 2rem;
+            }
         .learning-tools {
         display: flex;
         flex-direction: row;
@@ -412,6 +419,10 @@ nav {
         flex-direction: column;
         padding: 2rem;
         gap: 2rem;
+
+        h2 {
+            font-size: 2rem;
+        }
  
 
         .contact-links {
@@ -565,15 +576,13 @@ input {
 
     nav ul {
         padding: 0;
-        font-size: 0.9rem;
         flex-wrap: nowrap;
-        font-size: 0.6rem;
 
     }
 
     nav a {
         padding: 0.6rem;
-        font-size: 1%;
+        font-size: 0.8rem;
     }
 
     .intro {
@@ -723,22 +732,39 @@ input {
     width: 100%;
     display: flex;
     flex-direction: column;
+
+    h2 {
+        text-align: center;
+    }
+
     .learning-tools {
-        flex-direction: column;
-        gap: 2rem;
-            .tool-card {
-                width: 100%;
-                max-width: 280px;
-                border: red;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
 
-                img {
-                    max-height: 100px;
-                }
-    }
-    }
+        .tool-card {
+            width: auto;
+            max-width: 120px;
+            padding: 10px;
 
+            p {
+                display: none;
+            }
+
+            .icon-sm {
+                width: auto;
+                height: 80px;
+                object-fit: cover;
+            }
+
+            h3 {
+                font-size: 0.8rem;
+                text-align: center;
+            }
+        }
+    }
 }
-
 #contact-me {
     height: auto;
     padding: 4rem 0;
